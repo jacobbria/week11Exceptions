@@ -11,8 +11,15 @@ using namespace std;
 int main()
 {
 
-    Character ch('1', 1);
-    cout << "Test: " << ch.calcCharacter() << endl;
-
+   
+	try {
+        Character ch('?', 5);
+        char target = ch.calcCharacter();
+        cout << "test: " << target << endl;
+    }
+    catch (const InvalidCharacterException& e) {
+        cout << "test catch" << endl;
+        cout << e.what() << endl;
+    }
 
 }

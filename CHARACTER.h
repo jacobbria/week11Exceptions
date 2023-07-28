@@ -4,6 +4,7 @@
 using namespace std;
 
 #include "INVALID_CHARACTER_EXCEPTION.h"
+#include "INVALID_RANGE_EXCEPTION.h"
 
 class Character {
 
@@ -28,6 +29,7 @@ public:
 		}
 		catch (const InvalidCharacterException& e) {
 			cout << e.what() << endl;	// display a more accuate error message
+			throw;
 		}
 
 
@@ -49,22 +51,19 @@ public:
 		return offset;
 	}
 
-
 	char calcCharacter() {
+		char result = start + offset;
 
-		char target = start + offset;	// target variable for validating
-		try {
-
-
-
+		
+		try {// Check if the result is outside the acceptable range
+			if ((islower(start) && !islower(result)) || (isupper(start) && !isupper(result))) {
+				throw InvalidRangeException("Invalid range!");
+			}
 		}
-		catch {
-
-
+		catch (const InvalidRangeException){
 		}
-
-
-		return start + offset;
+	
+		return result;
 
 	}
 

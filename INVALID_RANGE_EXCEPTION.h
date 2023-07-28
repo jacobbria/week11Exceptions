@@ -3,14 +3,14 @@
 #define INVALID_RANGE_EXCEPTION_H
 
 #include <stdexcept>
-#include <iostream>
-using namespace std;
+#include <string>
 
-class InvalidRangeException : public exception {
+class InvalidRangeException : public std::runtime_error {
 public:
-    InvalidRangeException(const char* message) : exception(message) {
-        cout << "Error! Invalid input - Must be a letter A-Z or a-z." << endl;
+    explicit InvalidRangeException(const std::string& message)
+        : std::runtime_error(message) {
+        cout << "InvalidRangeError!";
     }
 };
 
-#endif // INVALID_C
+#endif // INVALID_RANGE_EXCEPTION_H

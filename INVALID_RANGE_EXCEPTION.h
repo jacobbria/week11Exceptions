@@ -9,7 +9,7 @@ class InvalidRangeException : public std::runtime_error {
 public:
     explicit InvalidRangeException(const std::string& message)
         : std::runtime_error(message) {
-        cout << "InvalidRangeError!";
+        cout << "InvalidRangeError!" << endl;
     }
 };
 

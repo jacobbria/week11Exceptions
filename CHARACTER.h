@@ -13,59 +13,20 @@ private:
 	int offset;
 public:
 
-	Character() {	// default constructor
-		start = ' ';
-		offset = 0;
-	}
+	Character() {}
 
 
-	Character(char c, int o) {	// input constructor
-		try {
-			if (!isalpha(c)) { // isalpha test if c is a letter
-				throw InvalidCharacterException(""); // throw the error if its not a letter
-			}
-			start = c;
-			offset = o;
-		}
-		catch (const InvalidCharacterException& e) {
-			cout << e.what() << endl;	// display a more accuate error message
-			throw;
-		}
+	Character(char c, int o) {}
 
+	void setstart(char c) {}
 
-	}
+	void setOffset(int o) {}
 
-	void setstart(char c) {
-		start = c;
-	}
+	char getstart() {}
 
-	void setOffset(int o) {
-		offset = o;
-	}
+	int getOffset() {}
 
-	char getstart() {
-		return start;
-	}
-
-	int getOffset() {
-		return offset;
-	}
-
-	char calcCharacter() {
-		char result = start + offset;
-
-		
-		try {// Check if the result is outside the acceptable range
-			if ((islower(start) && !islower(result)) || (isupper(start) && !isupper(result))) {
-				throw InvalidRangeException("Invalid range!");
-			}
-		}
-		catch (const InvalidRangeException){
-		}
-	
-		return result;
-
-	}
+	char calcCharacter() {}
 
 
 };

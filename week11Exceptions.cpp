@@ -13,13 +13,16 @@ int main()
 
    
 	try {
-        Character ch('?', 5);
+        Character ch('A', 32);
         char target = ch.calcCharacter();
         cout << "test: " << target << endl;
     }
     catch (const InvalidCharacterException& e) {
         cout << "test catch" << endl;
         cout << e.what() << endl;
+    }
+    catch (const InvalidRangeException) {
+        cout << "Test Catch in Main" << endl;
     }
 
 }

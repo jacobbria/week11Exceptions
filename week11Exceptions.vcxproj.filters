@@ -23,5 +23,8 @@
     <ClInclude Include="CHARACTER.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="INVALID_CHARACTER_EXCEPTION.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

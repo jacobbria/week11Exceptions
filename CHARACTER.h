@@ -3,6 +3,8 @@
 #define CHARACTER_h
 using namespace std;
 
+#include "INVALID_CHARACTER_EXCEPTION.h"
+
 class Character {
 
 private:
@@ -17,8 +19,18 @@ public:
 
 
 	Character(char c, int o) {	// input constructor
-		start = c;
-		offset = o;
+		try {
+			if (!isalpha(c)) { // isalpha test if c is a letter
+				throw InvalidCharacterException("invalidCharacterExcpeption - invalid input. Must be a (A-Z) or (a-z)"); // throw the error if its not a letter
+			}
+			start = c;
+			offset = o;
+		}
+		catch (const InvalidCharacterException& e) {
+			cout << e.what() << endl;	// display a more accuate error message
+		}
+
+
 	}
 
 	void setstart(char c) {
@@ -39,6 +51,9 @@ public:
 
 
 	char calcCharacter() {
+
+				
+
 
 		return start + offset;
 

@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
 
-    Character ch('a', 1);
+    Character ch('1', 1);
     cout << "Test: " << ch.calcCharacter() << endl;
 
 

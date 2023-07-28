@@ -21,7 +21,7 @@ public:
 	Character(char c, int o) {	// input constructor
 		try {
 			if (!isalpha(c)) { // isalpha test if c is a letter
-				throw InvalidCharacterException("invalidCharacterExcpeption - invalid input. Must be a (A-Z) or (a-z)"); // throw the error if its not a letter
+				throw InvalidCharacterException(""); // throw the error if its not a letter
 			}
 			start = c;
 			offset = o;
@@ -52,7 +52,16 @@ public:
 
 	char calcCharacter() {
 
-				
+		char target = start + offset;	// target variable for validating
+		try {
+
+
+
+		}
+		catch {
+
+
+		}
 
 
 		return start + offset;

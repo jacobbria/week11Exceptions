@@ -13,20 +13,20 @@ private:
 	int offset;
 public:
 
-	Character() {}
+	Character();
 
+	Character(char c, int o);
 
-	Character(char c, int o) {}
+	void setstart(char c);
 
-	void setstart(char c) {}
+	void setOffset(int o);
 
-	void setOffset(int o) {}
+	char getstart();
 
-	char getstart() {}
+	int getOffset();
 
-	int getOffset() {}
+	char calcCharacter();
 
-	char calcCharacter() {}
 
 
 };

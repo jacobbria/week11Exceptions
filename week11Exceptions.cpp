@@ -13,7 +13,7 @@ int main()
 
    
 	try {
-        Character ch('A', 32);
+        Character ch('a', 5);
         char target = ch.calcCharacter();
         cout << "test: " << target << endl;
     }

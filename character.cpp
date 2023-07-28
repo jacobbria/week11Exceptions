@@ -8,7 +8,6 @@ Character::Character() {	// default constructor
 	offset = 0;
 }
 
-
 Character::Character(char c, int o) {	// input constructor
 	try {
 		if (!isalpha(c)) { // isalpha test if c is a letter
@@ -21,8 +20,6 @@ Character::Character(char c, int o) {	// input constructor
 		cout << e.what() << endl;	// display a more accuate error message
 		throw;
 	}
-
-
 }
 
 void Character::setstart(char c) {
@@ -42,12 +39,13 @@ int Character::getOffset() {
 }
 
 char Character::calcCharacter() {
+	
 	char result = start + offset;
-
 	try {// Check if the result is outside the acceptable range
 		if ((islower(start) && !islower(result)) || (isupper(start) && !isupper(result))) {
 			throw InvalidRangeException("Invalid range!");
 		}
+		else return result;
 	}
 	catch (const InvalidRangeException) {
 		throw;
